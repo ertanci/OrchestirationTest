@@ -9,7 +9,7 @@ pipeline {
         sh 'echo hotness > myfile.txt'
         script {
             echo "test"
-            sh 'echo $(pwd)'
+            echo $(pwd)
           // OPTION 1: set variable by reading from file.
           // FYI, trim removes leading and trailing whitespace from the string
           myVar = readFile('myfile.txt').trim()
