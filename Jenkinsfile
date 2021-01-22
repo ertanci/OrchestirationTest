@@ -2,29 +2,18 @@ pipeline {
   agent any
   stages {
     stage('one') {
-      parallel {
-        stage('one') {
-          steps {
-            echo "${myVar}" // prints 'initial_value'
-            sh 'echo hotness > myfile.txt'
-            script {
-              echo "test"
-              echo $(pwd)
-              // OPTION 1: set variable by reading from file.
-              // FYI, trim removes leading and trailing whitespace from the string
-              myVar = readFile('myfile.txt').trim()
-            }
-
-            echo "${myVar}" // prints 'hotness'
-          }
+      steps {
+        echo "${myVar}" // prints 'initial_value'
+        sh 'echo hotness > myfile.txt'
+        script {
+          echo "test"
+          echo $(pwd)
+          // OPTION 1: set variable by reading from file.
+          // FYI, trim removes leading and trailing whitespace from the string
+          myVar = readFile('myfile.txt').trim()
         }
 
-        stage('tata') {
-          steps {
-            sh 'echo test'
-          }
-        }
-
+        echo "${myVar}" // prints 'hotness'
       }
     }
 
