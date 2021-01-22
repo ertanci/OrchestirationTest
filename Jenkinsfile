@@ -19,7 +19,7 @@ pipeline {
           }
         }
 
-        stage('error') {
+        stage('tata') {
           steps {
             sh 'echo test'
           }
