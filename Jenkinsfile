@@ -19,9 +19,9 @@ pipeline {
           }
         }
 
-        stage('') {
+        stage('error') {
           steps {
-            sh 'sh \'echo test\''
+            sh 'echo test'
           }
         }
 
