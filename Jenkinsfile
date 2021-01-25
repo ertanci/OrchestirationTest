@@ -2,6 +2,9 @@ pipeline {
   agent any
   stages {
     stage('one') {
+      environment {
+        myname = 'myvalue'
+      }
       parallel {
         stage('one') {
           steps {
