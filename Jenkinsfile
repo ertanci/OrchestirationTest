@@ -24,6 +24,10 @@ pipeline {
         stage('parallel for one') {
           steps {
             echo 'I am for parallel one '
+            retry(count: 3) {
+              echo 'retry this'
+            }
+
           }
         }
 
@@ -36,7 +40,7 @@ pipeline {
       }
     }
 
-    stage('three') {
+    stage('https://emojipedia.org/ship/ three') {
       when {
         expression {
           myVar != 'hotness'
