@@ -40,7 +40,7 @@ pipeline {
       }
     }
 
-    stage('https://emojipedia.org/ship/ three') {
+    stage('three') {
       when {
         expression {
           myVar != 'hotness'
